@@ -7,6 +7,7 @@ from flask import Flask
 app = Flask(__name__)
 
 led = GPIO(18)
+led.on()
 
 @app.route('/')
 def hello_world():
