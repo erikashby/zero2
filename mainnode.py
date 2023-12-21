@@ -15,7 +15,7 @@ def status_res():
     return status
 
 @app.route('/node/status')
-def status_res():
+def status_result():
     status = {"NodeName":"node1", "Light":0}
     return status
 
