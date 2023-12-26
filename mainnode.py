@@ -51,3 +51,5 @@ def light_off(_id):
 def light_toggle(_id):
     light_status[_id] = (light_status[_id] + 1) % 2 
     leds[_id].toggle()
+
+# def status, ask the pi to return current status on the machine.
