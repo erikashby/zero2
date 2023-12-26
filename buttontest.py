@@ -1,6 +1,9 @@
-from gpiozero import Button
+import gpiozero
 
-button = Button(2)
+button = gpiozero.Button(2)
 
-button.wait_for_active()
-print("Button 22 has been pressed.")
+while True:
+    if button.is_pressed:
+        print("Button is pressed")
+    else:
+        print("Button is not pressed")
