@@ -49,13 +49,13 @@ def light_on(_id):
     findid = _id
     if math.isnan(findid):
         findid = find_id(_id)
-    leds[findid].on()
+    leds[int(findid)].on()
 
 def light_off(_id):
     findid = _id
     if math.isnan(findid):
         findid = find_id(_id)
-    leds[findid].off()
+    leds[int(findid)].off()
 
 def find_id(_id):
     count = 0
