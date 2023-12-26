@@ -35,7 +35,7 @@ def change_light():
     action = request.args.get('action')
     if action == "on":
         light_on(id)
-    else:
+    elif action == "off":
         light_off(id)
     return get_status()
 
