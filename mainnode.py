@@ -43,29 +43,29 @@ def change_light():
 # send to server
 
 
+
 # Change lights status
 def light_on(_id):
-    new_id = _id
-    if math.isnan(new_id):
-        count = 0
-        for i in light_status:
-            get_light_status = json.loads(i)
-            if get_light_status.get('id') == new_id:
-                new_id = count
-            count += 1
-            print(new_id)
-    leds[new_id].on()
+    findid = _id
+    if math.isnan(findid):
+        findid = find_id(_id)
+    leds[findid].on()
 
 def light_off(_id):
-    new_id = _id
-    if math.isnan(new_id):
-        count = 0
-        for i in light_status:
-            get_light_status = json.loads(i)
-            if get_light_status.get('id') == new_id:
-                new_id = count
-            count += 1
-    leds[new_id].off()
+    findid = _id
+    if math.isnan(findid):
+        findid = find_id(_id)
+    leds[findid].off()
+
+def find_id(_id):
+    count = 0
+    for i in light_status:
+        get_light_id = i.get('id')
+        if get_light_id == _id:
+            new_id = count
+        count += 1
+        print(new_id)
+    return new_id
 
 def update_light_status():
     light_status = [{'id':'led0', 'state':leds[0].value},
