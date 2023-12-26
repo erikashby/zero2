@@ -1,6 +1,6 @@
 ### This is the main code for a node in the system
 
-import json
+import json, math
 from datetime import datetime
 from gpiozero import LED as GPIO
 from flask import Flask, request
@@ -45,9 +45,21 @@ def change_light():
 
 # Change lights status
 def light_on(_id):
-    leds[_id].on()
+    new_id = _id
+    if math.isnan(new_id):
+        for i in light_status:
+            get_light_status = json.loads(i)
+            if get_light_status.get('id') == new_id:
+                new_id = i
+    leds[new_id].on()
 
 def light_off(_id):
+    new_id = _id
+    if math.isnan(new_id):
+        for i in light_status:
+            get_light_status = json.loads(i)
+            if get_light_status.get('id') == new_id:
+                new_id = i
     leds[_id].off()
 
 def update_light_status():
