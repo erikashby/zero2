@@ -10,3 +10,10 @@ def get_status():
     status.append('leds_status':leds_status)
 
 ```
+
+## OUTPUT
+
+{
+    'nodeName':nodeName1,
+    'leds_status':[0,0,0,0,0]
+}
