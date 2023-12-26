@@ -46,16 +46,20 @@ def change_light():
 
 # Change lights status
 def light_on(_id):
-    findid = _id
+    findid = int(_id)
     if math.isnan(findid):
         findid = find_id(_id)
-    leds[int(findid)].on()
+    else:
+        findid = int(_id)
+    leds[findid].on()
 
 def light_off(_id):
-    findid = _id
+    findid = int(_id)
     if math.isnan(findid):
         findid = find_id(_id)
-    leds[int(findid)].off()
+    else:
+        findid = int(_id)
+    leds[findid].off()
 
 def find_id(_id):
     count = 0
