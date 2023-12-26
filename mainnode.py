@@ -65,7 +65,7 @@ def light_off(_id):
             if get_light_status.get('id') == new_id:
                 new_id = count
             count += 1
-    leds[_id].off()
+    leds[new_id].off()
 
 def update_light_status():
     light_status = [{'id':'led0', 'state':leds[0].value},
