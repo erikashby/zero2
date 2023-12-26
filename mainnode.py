@@ -31,7 +31,7 @@ def status_res():
 
 @app.route('/node/light')
 def change_light():
-    id = int(request.args.get('id'))
+    id = request.args.get('id')
     action = request.args.get('action')
     if action == "on":
         light_on(id)
