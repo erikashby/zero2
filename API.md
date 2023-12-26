@@ -2,8 +2,8 @@
 
 ## Endpoints
 
-GET /node/status  << Returns the status of all items on the node >>
-GET /node/light << perfrom an action (turn off or on) a light>>
+- GET /node/status  << Returns the status of all items on the node >>
+- GET /node/light << perfrom an action (turn off or on) a light>>
     parameters:
         ID - ID of light to turn on (led0..led5)
         action - action to perform ('on', 'off')
