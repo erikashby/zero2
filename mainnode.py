@@ -53,6 +53,7 @@ def light_on(_id):
             if get_light_status.get('id') == new_id:
                 new_id = count
             count += 1
+            print(new_id)
     leds[new_id].on()
 
 def light_off(_id):
