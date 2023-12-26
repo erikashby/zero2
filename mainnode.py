@@ -47,10 +47,12 @@ def change_light():
 def light_on(_id):
     new_id = _id
     if math.isnan(new_id):
+        count = 0
         for i in light_status:
             get_light_status = json.loads(i)
             if get_light_status.get('id') == new_id:
-                new_id = i
+                new_id = count
+            count += 1
     leds[new_id].on()
 
 def light_off(_id):
