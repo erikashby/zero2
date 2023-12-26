@@ -37,11 +37,10 @@ def change_light():
         light_on(id)
     else:
         light_off(id)
-    return "Light"
+    return get_status()
 
 # Button pressed
 # send to server
-
 
 
 # Change lights status
