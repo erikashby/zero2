@@ -37,7 +37,7 @@ def change_light():
         light_on(id)
     else:
         light_off(id)
-    return "Status light is " + light_status[id]
+    return "Light"
 
 # Button pressed
 # send to server
@@ -56,10 +56,12 @@ def light_on(_id):
 def light_off(_id):
     new_id = _id
     if math.isnan(new_id):
+        count = 0
         for i in light_status:
             get_light_status = json.loads(i)
             if get_light_status.get('id') == new_id:
-                new_id = i
+                new_id = count
+            count += 1
     leds[_id].off()
 
 def update_light_status():
