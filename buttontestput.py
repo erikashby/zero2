@@ -44,7 +44,7 @@ while True:
 
         test_json["status"] = status['status']
 
-        #print(test_json)
+        print(test_json)
 
         r = requests.put("http://192.168.1.166:5005/testprint",json=test_json)
         print(r.status_code)
