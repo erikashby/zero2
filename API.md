@@ -11,6 +11,7 @@
 
 ## this is an example of json file for status
 
+```
 {
     'name' : 'nodeName1',
     status = {
@@ -18,3 +19,4 @@
             'light_status' : [ {'id'= 'led0','state'=0 },{'id'= 'led1','state'=0 }...]
         }
 }
+```
