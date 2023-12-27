@@ -85,7 +85,7 @@ def get_status():
     # build the json file status
     curr_status = {'nodeName':nodename,
               'status': {
-                  'dateTime' : now,
+                  'datetime' : now,
                   'light_status' : update_light_status()
               }
               }
