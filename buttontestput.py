@@ -42,7 +42,7 @@ while True:
         status_url = "http://" + myip + ":5000/node/status"
         status = requests.get(status_url).json()
 
-        test_json["status"] = status
+        test_json["status"] = status['status']
 
         print(test_json)
 
