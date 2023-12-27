@@ -5,9 +5,7 @@ testIP = "8.8.8.8"
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect((testIP, 0))
 myip = s.getsockname()[0]
-host = socket.gethostname()
-print ("IP:", myip, " Host:", host)
-
+s.close()
 
 print(myip)
 
