@@ -44,7 +44,9 @@ while True:
 
         test_json["status"] = status
 
-        r = requests.put("http://192.168.1.166:5005/testprint",json=test_json)
+        print(test_json)
+
+        #r = requests.put("http://192.168.1.166:5005/testprint",json=test_json)
         print(r.status_code)
         last_button_status = 1
     if button_status == 0 and last_button_status == 1:
