@@ -1,7 +1,7 @@
 import gpiozero, requests, json
 from ipgetter2 import ipgetter1 as ipgetter
 
-myip = ipgetter.mypi()
+myip = ipgetter.myip()
 print(myip)
 
 button = gpiozero.Button(2)
