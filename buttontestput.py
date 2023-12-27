@@ -1,10 +1,16 @@
 import gpiozero, requests, json
+from ipgetter2 import ipgetter1 as ipgetter
+
+myip = ipgetter.mypi()
+print(myip)
 
 button = gpiozero.Button(2)
 button_status = 0
 last_button_status = 0
 
-test_json = {"name":"test", "event":"test event"}
+
+
+test_json = {"name":"test", "type":"button", "source ip":myip, "event":"toggle"}
 
 while True:
     button_status = 0
