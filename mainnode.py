@@ -79,7 +79,7 @@ def update_light_status():
 def get_status():
     # get the current time
     now = datetime.now()
-    # dd/mm/YY H:M:S
+    # mm/dd/YY H:M:S
     now = now.strftime("%m/%d/%Y %H:%M:%S")
 
     # build the json file status
