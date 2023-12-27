@@ -1,9 +1,11 @@
 import gpiozero
 
 button = gpiozero.Button(2)
+led = 0
 
 while True:
-    print("waiting for button")
+    led = 0
     if button.is_pressed:
-        print("Button is pressed")
+        led = 1
+    print("led")
         
