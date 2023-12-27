@@ -7,5 +7,5 @@ while True:
     led = 0
     if button.is_pressed:
         led = 1
-    print(led)
+    #print(led)
         
