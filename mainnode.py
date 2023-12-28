@@ -86,7 +86,7 @@ def get_status():
     curr_status = {'nodeName':nodename,
               'status': {
                   'datetime' : now,
-                  'light_status' : update_light_status()
+                  'lightstatus' : update_light_status()
               }
               }
     
