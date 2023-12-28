@@ -1,15 +1,23 @@
 import gpiozero, requests, json, socket
 from datetime import datetime
 
+### Load in config file
+get_config = open("config.json")
+config_file = json.load(get_config)
+get_config.close()
 
 ### Node varibles
-name = 'zero2'
-version = '0.1'
+name = config["name"]
+version = config["version"]
+config_type = config["type"]
+serverIP = config["serverIP"]
+serverPort = config["serverPort"]
 
 ### Get IP
 testIP = "8.8.8.8"
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect((testIP, 0))
+# myip = source ip
 myip = s.getsockname()[0]
 s.close()
 
@@ -19,8 +27,8 @@ button_status = 0
 last_button_status = 0
 
 
-test_json = {"name":name, 
-             "type":"node", 
+node_status = {"name":name, 
+             "type":config_type, 
              "version":version,
              "source ip":myip
              }
@@ -35,7 +43,7 @@ while True:
         now = now.strftime("%m/%d/%Y %H:%M:%S")
     
     if button_status == 1 and last_button_status == 0:
-        test_json["event"] = {
+        node_status["event"] = {
             "datetime":now,
             "type":"button",
             "ID":"btn0",
@@ -45,9 +53,9 @@ while True:
         status_url = "http://" + myip + ":5000/node/status"
         status = requests.get(status_url).json()
 
-        test_json["status"] = status['status']
+        node_status["status"] = status['status']
 
-        r = requests.put("http://192.168.1.166:5005/event",json=test_json)
+        r = requests.put(serverIP + ":" + serverPort + "/event", json=node_status)
         if int(r.status_code) == 200:
             print("OK")
         else:
