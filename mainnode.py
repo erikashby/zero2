@@ -7,7 +7,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # Server sets the var's value
-nodename = "node1"
+nodename = "zero2"
 leds = [GPIO(12),GPIO(27),GPIO(22),GPIO(6),GPIO(25)]
 
 light_status = [{'id':'led0', 'state':leds[0].value},
