@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 ### Node varibles
-name = 'zero1'
+name = 'zero2'
 version = '0.1'
 
 ### Get IP
