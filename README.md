@@ -44,6 +44,12 @@ main applications /home/erika/app/zero2
     - Installed flask
         pip install Flask
 
+## Installed PIP
+
+## Installed gpiozero
+    . app/bin/activate  << to activate the virtual enviornment >>
+    pip install gpiozero
+
     - Tested flask
         - added hello.py (see file) and updated raspberry pi
         - from /home/erika/app/rpi1
