@@ -6,8 +6,14 @@ from gpiozero import LED as GPIO
 from flask import Flask, request
 app = Flask(__name__)
 
-# Server sets the var's value
-nodename = "zero2"
+### Load in config file
+get_config = open("config.json")
+config_file = json.load(get_config)
+get_config.close()
+
+
+nodename = config["name"]
+
 leds = [GPIO(12),GPIO(27),GPIO(22),GPIO(6),GPIO(25)]
 
 light_status = [{'id':'led0', 'state':leds[0].value},
